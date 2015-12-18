@@ -1,0 +1,31 @@
+.barchart{
+    background: #888888;
+    position: relative;
+    min-height:300px;
+    min-width:300px;
+	width:300px;
+}
+
+.coin{
+	min-height:52px;
+	margin-bottom: -61px;
+	background-size: contain;
+    background-repeat: no-repeat;
+}
+.gold-coin{
+	background-image:url('../img/gold_coin.png');
+}
+
+.label-top{
+	text-align:center;
+	font-weight:bold;
+}
+
+.barchart-ul{
+	list-style-type:none;
+    width: 60px;
+    float: left;
+    vertical-align:bottom;
+    position: absolute;
+    bottom: 0;
+}

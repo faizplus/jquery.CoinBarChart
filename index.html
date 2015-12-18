@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>01 - JQuery Plugin Tutorials</title>
+</head>
+<style>
+	
+	.container{width:900px; padding:20px; margin:20px auto; }
+	.row {	margin:10px 0; }
+	.row img{width:100%;}
+	.img-wrap{width:200px; float:left;padding:10px; background:#313140;margin:15px 0; color:#fff;text-align:center}
+	.block {
+		position: absolute;
+		background-color: #abc;
+		left: 50px;
+		width: 90px;
+		height: 90px;
+		margin: 5px;
+	}
+	
+	
+	
+</style>
+
+<link rel="stylesheet" href="css/barchart.css" />
+
+<body>
+
+<div class="container">
+<div class="row">
+	<div class="barchart"></div>
+</div>
+</div>
+
+<script src="js/jquery-2.1.4.min.js" ></script>
+<script src="js/jquery.barchart.js" ></script>
+
+
+<script>
+
+	$(document).ready(function(){
+		'use strict';
+		$('.barchart').barchart({
+			// labels:['Sales','Services'],
+			series:[1000,110]
+		});
+	});
+</script>
+	
+</body>
+</html>
