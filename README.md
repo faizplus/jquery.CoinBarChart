@@ -2,7 +2,7 @@
 A lightweight jquery plugin for a basic bar chart cotaining 3d coins
 
 ## Default Options
-- labels:[], ==if not provided, series data will be used as labels==
+- labels:[], `if not provided, series data will be used as labels`
 - series:[],
 - strokeWidth:60,
 - topLabel:true,
