@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>01 - JQuery Plugin Tutorials</title>
+	<title>Coin Bar Chart by Faiz</title>
 </head>
 <style>
 	
@@ -41,8 +41,10 @@
 	$(document).ready(function(){
 		'use strict';
 		$('.barchart').barchart({
-			// labels:['Sales','Services'],
-			series:[1000,110]
+			labels:['Sales','Services'],
+			series:[1000, 2000],
+			coins:20,
+			fadeIn:50
 		});
 	});
 </script>

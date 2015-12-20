@@ -6,14 +6,17 @@
 		var opt = $.extend(true,{},{
 			labels:[],
 			series:[],
-            stroke:{width:60},
+            strokeWidth:60,
 			topLabel:true,
 			bottomLabel:false,
+			coins:10,
+			fadeIn:300
         }, options);
 		
 		return this.each(function(){
 		
 			var $chart = $(this),
+				total_li = 0,
 				max = Math.max.apply(Math, opt.series);
 
             $.each(opt.series, function(index, value){
@@ -21,32 +24,33 @@
 					opt.labels[index] = value;
 				}
 				
-				
-
 				var ul = $('<ol/>')
 					.addClass('barchart-ul')
-                    .css({width:opt.stroke.width, 'margin-bottom':'70px','margin-left':opt.stroke.width * index + 20 * index})
+                    .css({width:opt.strokeWidth, 'margin-bottom':'70px','margin-left':opt.strokeWidth * index + 20 * index})
 					.appendTo($chart);
 				
 				if(opt.bottomLabel){
 					var botlabel = $('<span/>')
 					.addClass('barchart-ul')
 					.text(opt.labels[index])
-                    .css({width:opt.stroke.width, 'margin-left':(opt.stroke.width * index + 20 * index)+50, 'bottom':10})
+                    .css({width:opt.strokeWidth, 'margin-left':(opt.strokeWidth * index + 20 * index)+50, 'bottom':10})
 					.appendTo($chart);	
 				}
 				
-				
-
-                var total_li = calc(max , value);
+				if(opt.coins == 10){
+					total_li = calc(max , value);
+				}else{
+					total_li = calc(max , value);
+					total_li = (total_li / 10) * opt.coins;
+				}
 
 				for(var i=0; i<total_li; i++) {
 					$('<li/>')
 						.addClass('coin gold-coin')
 						.hide()
 						.appendTo(ul)
-						.delay(i*150)
-						.fadeIn(300);
+						.delay(i*(opt.fadeIn / 2))
+						.fadeIn(opt.fadeIn);
 				}
 				
 				if(opt.topLabel){
@@ -55,8 +59,8 @@
 						.addClass('label-top')
 						.hide()
 						.appendTo(ul)
-						.delay(i*150)
-						.fadeIn(300);
+						.delay(i*(opt.fadeIn / 2))
+						.fadeIn(opt.fadeIn);
 				}
 				
 				
