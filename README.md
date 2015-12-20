@@ -17,4 +17,10 @@ A lightweight jquery plugin for a basic bar chart cotaining 3d coins
 		fadeIn:50
 	});
 ```
-[tete](http://myignou.in)
+
+
+
+- - -
+
+
+A plugin from [myignou.in](http://myignou.in)
